@@ -1,0 +1,56 @@
+{
+    "vType": "array",
+    "elem": {
+        "vType": "object",
+        "id": {
+            "vType": "id",
+            "required": 0
+        },
+        "title": {
+            "vType": "text",
+            "required": 1
+        },
+        "images": {
+            "vType": "array",
+            "required": 1,
+            "elem": {
+                "vType": "object",
+                "url": {
+                    "vType": "image",
+                    "required": 1
+                },
+                "caption": {
+                    "vType": "text",
+                    "required": 0
+                }
+            }
+        },
+        "paragraphs": {
+            "vType": "array",
+            "required": 1,
+            "elem": {
+                "vType": "object",
+                "p": {
+                    "vType": "text",
+                    "required": 1
+                }
+            }
+        },
+        "time": {
+            "vType": "date",
+            "required": 1
+        },
+        "updated": {
+            "vType": "date",
+            "required": 0
+        },
+        "img_path": {
+            "vType": "text",
+            "required": 1
+        },
+        "logo": {
+            "vType": "image",
+            "required": 1
+        }
+    }
+}
