@@ -1,68 +1,82 @@
 {
-  "vType": "array",
-  "elem": {
-	"vType": "object",
-	"id": {
-	  "vType": "id",
-	  "required": 0
-	},
-	"title": {
-	  "vType": "text",
-	  "required": 1
-	},
-	"author": {
-	  "vType": "object",
-	  "required": 0,
-	  "name": {
-		"vType": "text",
-		"required": 0
+  "$id": "https:\/\/raw.githubusercontent.com\/Valota\/data-syntax-news-with-images-and-paragraphs\/v2.0.0\/news-with-images-and-paragraphs.json",
+  "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
+  "description": "News With Images and Paragraphs data syntax for Valotalive",
+  "type": "array",
+  "items": {
+	"type": "object",
+	"properties": {
+	  "id": {
+		"type": [
+		  "string",
+		  "integer"
+		]
 	  },
-	  "avatar": {
-		"vType": "image",
-		"required": 0
-	  }
-	},
-	"images": {
-	  "vType": "array",
-	  "required": 1,
-	  "elem": {
-		"vType": "object",
-		"url": {
-		  "vType": "image",
-		  "required": 1
-		},
-		"caption": {
-		  "vType": "text",
-		  "required": 0
+	  "title": {
+		"type": "string"
+	  },
+	  "author": {
+		"type": "object",
+		"properties": {
+		  "name": {
+			"type": "string"
+		  },
+		  "avatar": {
+			"type": "string"
+		  }
 		}
-	  }
-	},
-	"paragraphs": {
-	  "vType": "array",
-	  "required": 1,
-	  "elem": {
-		"vType": "object",
-		"p": {
-		  "vType": "text",
-		  "required": 1
+	  },
+	  "images": {
+		"type": "array",
+		"items": {
+		  "type": "object",
+		  "properties": {
+			"url": {
+			  "type": "string"
+			},
+			"caption": {
+			  "type": "string"
+			}
+		  },
+		  "required": [
+			"url"
+		  ]
 		}
+	  },
+	  "paragraphs": {
+		"type": "array",
+		"items": {
+		  "type": "object",
+		  "properties": {
+			"p": {
+			  "type": "string"
+			}
+		  },
+		  "required": [
+			"p"
+		  ]
+		}
+	  },
+	  "time": {
+		"type": "integer"
+	  },
+	  "updated": {
+		"type": "integer"
+	  },
+	  "img_path": {
+		"type": "string"
+	  },
+	  "logo": {
+		"type": "string"
 	  }
 	},
-	"time": {
-	  "vType": "date",
-	  "required": 1
-	},
-	"updated": {
-	  "vType": "date",
-	  "required": 0
-	},
-	"img_path": {
-	  "vType": "text",
-	  "required": 1
-	},
-	"logo": {
-	  "vType": "image",
-	  "required": 1
-	}
+	"required": [
+	  "title",
+	  "images",
+	  "paragraphs",
+	  "time",
+	  "img_path",
+	  "logo"
+	]
   }
 }
